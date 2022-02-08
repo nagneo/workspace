@@ -1,40 +1,40 @@
 # Chapter02-2
-# 파이썬 완전 기초
-# 파이썬 변수
+# Totally Basic of Python
+# Variables of Python
 
-# 기본 선언
+# Declaration and assignment
 n = 700
 
-# 출력
+# Print
 print(n)
 print(type(n))
 
-# 동시 선언
+# Multiple declaration
 x = y = z = 700
 
-# 출력
+# Pirn
 print(x, y ,z)
 
-#선언
+# Declaration
 var = 75
 
-# 출력
+# Print
 print(var)
-print(type(var)
+print(type(var))
 
-# 재 선언
+# Redeclaration interger value to string value
 var = "Change Value"
 
-# 출력
+# Print
 print(var)
 print(type(var))
 
 
 # Object References
-# 변수 값 할당 상태
-# 1. 타입에 맞는 오브젝트 생성
-# 2. 값 생성
-# 3. 콘솔에 출력
+# variable assign statement
+# 1. create object by type
+# 2. carete value
+# 3. print to console
 
 # 예1)
 print(300)
@@ -59,27 +59,27 @@ print(m)
 print(type(m))
 
 
-# id(identity)확인 : 객체의 고유값 확인
+# check id(identity) : identified value of object
 m = 800
 n  = 655
 
-print(id(m))
-print(id(n))
+print("id(m): {}".format(id(m)))
+print("id(n): {}".format(id(n)))
 
 
 m = 800
 n  = 800
 
-# 같은 오브젝트 참조
+# refenrence same object
 print(id(m))
 print(id(n))
 
-# 다양한 변수 선언
+# Variout declaration of variables
 # Camel Case :  numberOfCollegeGraduates
 # Pascal Case :  NumberOfCollegeGraduates
 # Snake Case :  number_of_college_graduates
 
-# 허용하는 변수 선언 법
+# Enable formats of variable name
 age = 1
 Age = 2
 aGe = 3
@@ -89,7 +89,7 @@ _age = 6
 age_ = 7
 _AGE_ = 8
 
-# 예약어는 변수명으로 불가능
+# Reserved word which can not be used as varialble 
 """
 False	def	if	raise
 None	del	import	return
