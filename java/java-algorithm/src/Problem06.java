@@ -3,8 +3,9 @@ import java.util.LinkedHashSet;
 import java.util.Scanner;
 import java.util.Set;
 
-public class Problem06 {
-
+public class Problem06 implements IProblem
+{
+	@Override
 	public void solve()
 	{
 		Scanner in = new Scanner(System.in);

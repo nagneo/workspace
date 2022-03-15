@@ -1,8 +1,9 @@
 /*  4. 단어 뒤집기  */
 import java.util.Scanner;
 
-public class Problem04 {
-
+public class Problem04 implements IProblem
+{
+	@Override
 	public void solve()
 	{
 		Scanner in = new Scanner(System.in);

@@ -1,33 +1,68 @@
+import java.util.Scanner;
 
-public class Main {
-
-	public static void main(String[] args) {
+public class Main
+{
+	public static void main(String[] args)
+	{	
 		// TODO Auto-generated method stub
+		Scanner in = new Scanner(System.in);
+		int number = in.nextInt();
 		
-		//Problem01 pro1 = new Problem01();
-		//pro1.solve();
+		IProblem problem = GetProblem(number);
+		if(problem != null)
+		{
+			problem.solve();
+		}
 		
-		//Problem02 pro2 = new Problem02();
-		//pro2.solve();
-		
-		//Problem03 pro3 = new Problem03();
-		//pro3.solve();
-		
-		//Problem04 pro4 = new Problem04();
-		//pro4. solve();
-		
-		//Problem05 pro5 = new Problem05();
-		//pro5.solve();
-		
-		//Problem06 pro6 = new Problem06();
-		//pro6.solve();
-		
-		//Problem07 pro7 = new Problem07();
-		//pro7.solve();
-		
-		Problem08 pro8 = new Problem08();
-		pro8.solve();
-		
+		return;
 	}
-
+	
+	private static IProblem GetProblem(int num)
+	{
+		IProblem problem = null;
+		switch(num)
+		{
+			case 1: 
+				problem = new Problem01();
+				break;
+			case 2:
+				problem = new Problem02();
+				break;
+			case 3:
+				problem = new Problem03();
+				 break;
+			case 4:
+				problem = new Problem04();
+				break;
+			case 5:
+				problem = new Problem05();
+				break;
+			case 6:
+				problem = new Problem06();
+				break;
+			case 7:
+				problem = new Problem07();
+				break;
+			case 8:
+				problem = new Problem08();
+				break;
+			case 9:
+				problem = new Problem09();
+				break;
+			case 10:
+				problem = new Problem10();
+				break;
+			case 11:
+				problem = new Problem11();
+				break;
+			case 12:
+				problem = new Problem12();
+				break;
+			default:
+				System.out.println("Invalid Number");
+				break;
+		}
+		
+		return problem;
+	}
 }

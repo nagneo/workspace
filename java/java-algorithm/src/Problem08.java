@@ -1,8 +1,9 @@
 /* 8. 유효한 팰린드롬 */
 import java.util.Scanner;
 
-public class Problem08 {
-
+public class Problem08 implements IProblem
+{
+	@Override
 	public void solve()
 	{
 		Scanner in = new Scanner(System.in);

@@ -3,8 +3,9 @@
 import java.util.Scanner;
 
 
-public class Problem07 {
-
+public class Problem07 implements IProblem
+{
+	@Override
 	public void solve()
 	{
 		Scanner in = new Scanner(System.in);
