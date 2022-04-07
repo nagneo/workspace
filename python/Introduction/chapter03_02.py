@@ -98,7 +98,7 @@ print(str(10.1))
 print(str(True))
 print(str(complex(12)))
 
-# 문자열 함수(upper, isalnum, startswith, count, endswith, isalpha 등)
+# function of string(upper, isalnum, startswith, count, endswith, isalpha,,, etc)
 print("Capitalize: ", str_o1.capitalize())
 print("endswith?: ", str_o2.endswith("s"))
 print("join str: ", str_o1.join(["I'm ", "!"]))
@@ -109,32 +109,30 @@ print("sorted: ", sorted(str_o1))  # reverse=True
 print("reversed1: ", reversed(str_o2)) #list 형 변환
 print("reversed2: ", list(reversed(str_o2)))
 
-# 반복(시퀀스) 설명
+# description of iteration (sequence)
 im_str = "Good Boy!"
 
 print(dir(im_str))  # __iter__ 확인
 
-# 출력
 for i in im_str:
     print(i)
 
-
-# 슬라이싱
+# slicing
 str_sl = 'Nice Python'
 
-# 슬라이싱 연습
+# exercise of slicing [start: count]
 print(str_sl[0:3])
 print(str_sl[:len(str_sl)])
 print(str_sl[:len(str_sl) - 1])
-print(str_sl[:])
-print(str_sl[1:4:2])
+print(str_sl[:]) #all
+print(str_sl[1:4:2]) #[start, end (not incldue index of end), step]
 print(str_sl[-4:-2])
 print(str_sl[1:-2])
 print(str_sl[::-1])
 print(str_sl[::2])
 
 
-# 아스키코드
+# Ascii code
 a = 'z'
 
 print(ord(a))

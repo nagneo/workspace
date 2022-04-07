@@ -1,8 +1,8 @@
 # Chapter03-6
-# 집합(Sets) 특징
-# 집합(Sets) 자료형(순서X, 중복X)
+# Sets
+# Sets Type( unordered, duplication X)
 
-# 선언
+# declaration
 a = set()
 b = set([1, 2, 3, 4])
 c = set([1, 4, 5, 6])
@@ -17,48 +17,48 @@ print('d - ', type(d), d)
 print('e - ', type(e), e)
 print('f - ', type(f), f)
 
-# 튜플 변환
+# convert to tuple
 t = tuple(b)
 print('t - ', type(t), t)
 print('t - ', t[0], t[1:3])
 
 
-# 리스트 변환
+# convert to list
 l = list(c)
 l2 = list(e)
 print('l - ', type(l), l)
 print('l - ', l[0], l[1:3])
 print('l2 - ', type(l2), l2)
 
-# 길이
+# lenght
 print(len(a))
 print(len(b))
 print(len(c))
 print(len(d))
 print(len(e))
 
-# 집합 자료형 활용
+# usage of set
 s1 = set([1, 2, 3, 4, 5, 6])
 s2 = set([4, 5, 6, 7, 8, 9])
 
-print('l - ', s1 & s2)
-print('l - ', s1.intersection(s2))
+print('s1 & s2 : l - ', s1 & s2)
+print('s1 intersection s2 : l - ', s1.intersection(s2))
 
-print('l - ', s1 | s2)
-print('l - ', s1.union(s2))
+print('s1 | s2 : l - ', s1 | s2)
+print('s1 union s2 : l - ', s1.union(s2))
 
-print('l - ', s1 - s2)
-print('l - ', s1.difference(s2))
+print('s1 - s2 : l - ', s1 - s2)
+print('s1 difference s2 : l - ', s1.difference(s2))
 
-# 중복 원소 확인
-print('l - ', s1.isdisjoint(s2))
+# has not duplicate element
+print('is disjoint l - ', s1.isdisjoint(s2))
 
-# 부분 집합 확인
-print('l - ', s1.issubset(s2))
-print('l - ', s1.issuperset(s2))
+# subset
+print('issubset : l - ', s1.issubset(s2))
+print('issuperset : l - ', s1.issuperset(s2))
 
 
-# 추가 & 제거
+# add, remove, discard 
 s1 = set([1, 2, 3, 4])
 s1.add(5)
 print('s1 - ', s1)
@@ -72,5 +72,7 @@ print('s1 - ', s1)
 
 #s1.discard(7)
 
-# 모두 제거
+#This method is different from the remove() method, because the remove() method will raise an error if the specified item does not exist, and the discard() method will not.
+
+# clear
 s1.clear()

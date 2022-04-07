@@ -1,24 +1,25 @@
 # Chapter04-3
-# 파이썬 반복문
-# While 실습
+# Iteration 2
+# While
 
+# Expression
 # while <expr>:
 #    <statement(s)>
 
-# 예제1
+# 1.
 n = 5
 while n > 0:
-    print(n)
+    print(n, end=' ')
     n = n - 1
-    
-# 예제2
+print()
+
+# 2
 a = ['foo', 'bar', 'baz']
-
 while a:
-    print(a.pop())
+    print(a.pop(), end=' ')
+print()
 
-# if 중첩
-# 예제3
+# 3. if 
 # break , continue
 
 n = 5
@@ -26,42 +27,42 @@ while n > 0:
     n -= 1
     if n == 2:
         break
-    print(n)
+    print(n, end=' ')
 print('Loop Ended.')  
 print()
 
-# 예제4
+# 4
 m = 5
 while m > 0:
     m -= 1
     if m == 2:
         continue
-    print(m)
+    print(m, end=' ')
 print('Loop Ended.')   
 
-# 예제5
+# 5
 i = 1
-
 while i <= 10:
     print('i:',i)
     if i == 6:
         break
     i += 1
+print()
 
 
-# While - else 구문
+# While - else statemnet
 
-# 예제6
+# 6
 n = 10
 while n > 0:
     n -= 1
-    print(n)
+    print(n, end=' ')
     if n == 5:
         break
 else:
-    print('else out.')
+    print('else out.') # example: n <= 0
 
-# 예제7 
+# 7 
 a = ['foo', 'bar', 'baz', 'qux']
 s = 'qux'
 
@@ -72,14 +73,13 @@ while i < len(a):
         break
     i += 1
 else:
-    print(s, 'not found in list.')
+    print(s, 'not found in list.') # example: i >= len(a)
     
-    
-# 무한반복
+# infinity
 # while True:
 #     print('Foo')
 
-# 예제8
+# 8
 a = ['foo', 'bar', 'baz']
 while True:
     if not a:

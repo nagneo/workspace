@@ -1,74 +1,72 @@
 # Chapter04-1
-# 파이썬 제어문
-# IF 실습
+# Control Statement
+# IF
 
-# 기본 형식
-
+# basic
 print(type(True))
 print(type(False))
 
-# 예1
+# Exercise
 if True:
-    print("Good")  # 들여쓰기(Indent)
+    print("Good")  # need to indent
 
 if False:
-    # 실행 X
+    # not execute
     print("Bad")
 
-# 예2
 if False:
-    # 여기는 실행되지 않음.
+    # not execute
     print("Bad")
 else:
-    # 여기가 실행된다.
+    # execute
     print("Good")
 
-# 관계연산자 종류
+# relational operator
 # >, >=, <, <=, ==, !=
 
 
 x = 15
 y = 10
 
-# == 양 변이 같을 때 참.
+# == (equal)
 print(x == y)
 
-# != 양 변이 다를 때 참.
+# != (not equal)
 print(x != y)
 
-# > 왼쪽이 클때 참.
+# >
 print(x > y)
 
-# >= 왼쪽이 크거나 같을 때 참.
+# >= 
 print(x >= y)
 
-# < 오른쪽이 클 때 참.
+# < 
 print(x < y)
 
-# <= 오른쪽이 크거나 같을 때 참.
+# <= 
 print(x <= y)
 
-# 참 거짓 판별 종류
-# 참 : "values", [values], (values), {values}, 1
-# 거짓 : "", [], (), {}, 0, None
+# type of true, false
+# True : "values", [values], (values), {values}, 1
+# False : "", [], (), {}, 0, None
 
 city = ""
 if city:
     print("You are in:", city)
 else:
-    # 출력
+    # print
     print("Please enter your city")
 
 city = "Seoul"
 if city:
+    #print
     print("You are in:", city)
 else:
-    # 출력
     print("Please enter your city")
 
-# 논리연산자(중요)
+# logical operator
 # and, or, not
-# 참고 : https://www.tutorialspoint.com/python/python_basic_operators.htm
+# Reference : https://www.tutorialspoint.com/python/python_basic_operators.htm
 
 a = 75
 b = 40
@@ -81,8 +79,8 @@ print('not : ', not b > c)
 print(not True)
 print(not False)
 
-# 산술, 관계, 논리 우선순위
-# 산술 > 관계 > 논리 순서로 적용
+# priority of computation
+# arithmetic > relational >logical
 
 print('e1 : ', 3 + 12 > 7 + 3)
 print('e2 : ', 5 + 10 * 3 > 7 + 3 * 20)
@@ -92,26 +90,25 @@ print('e4 : ', 5 + 10 > 0 and not 7 + 3 == 10)
 score1 = 90
 score2 = 'A'
 
-# 복수의 조건이 모두 참일 경우에 실행.
 if score1 >= 90 and score2 == 'A':
     print("Pass.")
 else:
     print("Fail.")
 
-# 예제
+# Example
 
 id1 = "vip"
 id2 = "admin"
 grade = 'platinum'
 
 if id1 == "vip" or id2 == "admin":
-    print("관리자 인증")
+    print("Administrater authentication")
 
 if id2 == "admin" and grade == "platinum":
-    print("최상위 관리자")
+    print("Platinum Administrator")
 
 
-# 다중 조건문
+# multiple conditional statement
 num = 90
 
 if num >= 90:
@@ -121,22 +118,22 @@ elif num >= 80:
 elif num >= 70:
     print('Grade : C')
 else:
-    print('과락')
+    print('Fail')
 
-# 중첩 조건문
+# duplicated conditional stetement
 
 grade = 'A'
 total = 95
 
 if grade == 'A':
     if total >= 90:
-        print("장학금 100%")
+        print("Scholarship 100%")
     elif total >= 80:
-        print("장학금 80%")
+        print("Scholarship 80%")
     else:
-        print("장학금 70%")
+        print("Scholarship 70%")
 else:
-    print("장학금 50%")
+    print("Scholarship 50%")
 
 # in, not in
 
@@ -148,5 +145,5 @@ r = (10, 12, 14)
 print(15 in q)
 print(90 in w)
 print(12 not in r)
-print("name" in e)  # key 검색
-print("seoul" in e.values())  # value 검색
+print("name" in e)  # key 
+print("seoul" in e.values())  # value
