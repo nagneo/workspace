@@ -1,15 +1,15 @@
 # Chapter06-1
-# 파이썬 클래스
-# OOP(객체 지향 프로그래밍), Self, 인스턴스 메소드, 인스턴스 변수
+# python class
+# OOP(object oriented programming), Self, instance method, instance variable
 
-# 클래스 and 인스턴스 차이 이해
-# 네임스페이스 : 객체를 인스턴스화 할 때 저장된 공간
-# 클래스 변수 : 직접 접근 가능, 공유
-# 인스턴스 변수 : 객체마다 별도 존재
+# understanding difference with class and instance
+# namespace : space stored when you instantiate objects
+# class variable : accessable to directly, share
+# instance variable : exist independently by objects
 
-# 예제1
-class Dog: # object 상속
-    # 클래스 속성
+# 1
+class Dog: # object inheritance
+    # property of class
     species = 'firstdog'
     
     # 초기화/인스턴스 속성
@@ -17,21 +17,22 @@ class Dog: # object 상속
         self.name = name
         self.age = age
         
-# 클래스 정보
+# information of class
 print(Dog)
 
-# 인스턴스화
+# instantiation
 a = Dog("mikky", 2)
 b = Dog("baby", 3)
 
-# 비교
+# comparison
 print(a == b, id(a), id(b))
 
-# 네임스페이스
+print('======================__dict__======================')
+# namespace
 print('dog1', a.__dict__)
 print('dog2', b.__dict__)    
     
-# 인스턴스 속성 확인
+# check property of class
 print('{} is {} and {} is {}'.format(a.name, a.age, b.name, b.age))
 
 if a.species == 'firstdog':
@@ -41,8 +42,8 @@ print(Dog.species)
 print(a.species)
 print(b.species)
 
-# 예제2
-# self의 이해
+# 2
+# self
 class SelfTest:
     def func1():
         print('Func1 called')
@@ -55,20 +56,20 @@ f = SelfTest()
 
 # print(dir(f))
 print(id(f))
-# f.func1() # 예외
+#f.func1() # Exception (TypeError: SelfTest.func1() takes 0 positional arguments but 1 was given)
 f.func2()
 SelfTest.func1()
-# SelfTest.func2() # 예외
+# SelfTest.func2() # Exception (TypeError: SelfTest.func2() missing 1 required positional argument: 'self')
 SelfTest.func2(f)
 
-# 예제3
-# 클래스 변수, 인스턴스 변수
+# 3
+# class variable, instance variable
 class Warehouse:
-    # 클래스 변수 
-    stock_num = 0 # 재고
+    # class variable 
+    stock_num = 0 # stock
     
     def __init__(self, name):
-        # 인스턴스 변수
+        # instance variable
         self.name = name
         Warehouse.stock_num += 1
     
@@ -90,12 +91,12 @@ print('>>>', user1.stock_num)
 del user1
 print('after', Warehouse.__dict__)
 
-# 예제4
-class Dog: # object 상속
-    # 클래스 속성
+# 4
+class Dog: # object inheritance
+    # property of class
     species = 'firstdog'
     
-    # 초기화/인스턴스 속성
+    # initiation / property of instance
     def __init__(self, name, age):
         self.name = name
         self.age = age
@@ -107,12 +108,12 @@ class Dog: # object 상속
         return "{} says {}!".format(self.name, sound)
 
 
-# 인스턴스 생성
+# instance creation
 c = Dog('july', 4)
 d = Dog('Marry', 10)
-# 메소드 호출
+# call method
 print(c.info())
 print(d.info())
-# 메소드 호출
+# call method
 print(c.speak('Wal Wal'))
 print(d.speak('Mung Mung'))

@@ -1,12 +1,12 @@
 # Chapter05-1
-# 파이썬 함수 및 중요성
-# 파이썬 함수식 및 람다(lambda)
+# importance of python function 
+# python function and lambda
 
-# 함수 정의 방법
+# function definition expression
 # def function_name(parameter):
 #     code
 
-# 예제1
+# 1
 def first_func(w1):
     print("Hello, ", w1)
 
@@ -14,7 +14,7 @@ word = "Goodboy"
 
 first_func(word)
 
-# 예제2
+# 2
 def return_func(w1):
     value = "Hello, " + str(w1)
     return value
@@ -23,7 +23,7 @@ x = return_func('Goodboy2')
 print(x)
     
 
-# 예제3(다중반환)
+# 3 return multi variables
 
 def func_mul(x):
     y1 = x * 10
@@ -35,7 +35,7 @@ x, y, z = func_mul(10)
 
 print(x, y ,z)
 
-# 튜플 리턴
+# 4 return tuple
 def func_mul2(x):
     y1 = x * 10
     y2 = x * 20
@@ -46,7 +46,7 @@ q = func_mul2(20)
 
 print(type(q), q, list(q))
 
-# 리스트 리턴
+# 5 return list
 def func_mul2(x):
     y1 = x * 10
     y2 = x * 20
@@ -58,7 +58,7 @@ p = func_mul2(30)
 
 print(type(p), p, set(q))
 
-# 딕셔너리 리턴
+# 6  return dictionary
 def func_mul3(x):
     y1 = x * 10
     y2 = x * 20
@@ -69,11 +69,11 @@ def func_mul3(x):
 d = func_mul3(30)
 print(type(d), d, d.get('v2'), d.items(), d.keys())
 
-# 중요
+# 7 importance
 # *args, **kwargs
 
-# *args(언팩킹)
-def args_func(*args): # 매개변수 명 자유
+# *args (unpacking)
+def args_func(*args): # parameter name is freely determined.
     for i, v in enumerate(args):
         print('Result : {}'.format(i), v)
     print('-----')
@@ -82,8 +82,8 @@ args_func('Lee')
 args_func('Lee', 'Park')
 args_func('Lee', 'Park', 'Kim')
 
-# **kwargs(언팩킹)
-def kwargs_func(**kwargs): # 매개변수 명 자유
+# **kwargs (unpacking)
+def kwargs_func(**kwargs): # parameter name is freely determined.
     for v in kwargs.keys():
         print("{}".format(v), kwargs[v])
     print('-----')
@@ -92,13 +92,13 @@ kwargs_func(name1='Lee')
 kwargs_func(name1='Lee', name2='Park')
 kwargs_func(name1='Lee', name2='Park', name3='Cho')
 
-# 전체 혼합
+# combination of * and **
 def example(args_1, args_2, *args, **kwargs):
     print(args_1, args_2, args, kwargs)
 
 example(10, 20, 'Lee', 'Kim', 'Park', 'Cho', age1=20, age2=30, age3=40)
 
-# 중첩함수
+# nested function
 
 def nested_func(num):
     def func_in_func(num):
@@ -108,21 +108,21 @@ def nested_func(num):
 
 nested_func(100)
 
-# 실행불가
+# not executable
 # func_in_func(1000)
 
-# 람다식 예제
-# 메모리 절약, 가독성 향상, 코드 간결
-# 함수는 객체 생성 -> 리소스(메모리) 할당
-# 람다는 즉시 실행 함수(Heap 초기화) -> 메모리 초기화
-# 남발 시 가독성 오히려 감소
+# Example of Lambda
+# Save of memory, readability up, simple code
+# function object create -> resource(memory) assign
+# 람다는 즉시 실행 함수(Heap Initialize) -> memory initialize
+# If it's overused, it's less legible
 
 #def mul_func(x, y):
 #    return x * y
     
 #lambda x, y:x*y
 
-# 일반적함수 -> 할당
+# general function -> assign
 def mul_func(x, y):
     return x * y
 
@@ -131,7 +131,7 @@ print(mul_func(10, 50))
 mul_func_var = mul_func
 print(mul_func_var(20,50))
 
-# 람다 함수 -> 할당
+# lambda -> assign
 lambda_mul_func = lambda x,y:x*y
 print(lambda_mul_func(50,50))
 
