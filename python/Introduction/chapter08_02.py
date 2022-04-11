@@ -1,90 +1,91 @@
 # Chapter08-2
-# 파이썬 외장(External)함수
-# 실제 프로그램 개발 중 자주 사용
-# 종류 : sys, pickle, os, shutil, glob, temfile, time, random 등
+# python external function
+# commonly used in real programming
+# types : sys, pickle, os, shutil, glob, temfile, time, random etc
 
-# sys : 실행 관련 제어
+# sys : control execution
 import sys
 
-# 예제1
+# 1
 print(sys.argv)
 
-# 예제2(강제 종료)
+# 2 -force shot down
 # sys.exit() 
 
-# 예제3(파이썬 패키지 위치)
+# 3 - location of python package
 print(sys.path)
 
 
-# pickle : 객체 파일 쓰기
+# pickle : write file
 import pickle
 
-# 예제4(쓰기)
+# 4 - write
 f = open("test.obj", 'wb')
 obj = {1: 'python', 2: 'study', 3: 'basic'}
 pickle.dump(obj, f)
 f.close()
 
-# 예제5(읽기)
+# 5 - read
 f = open("test.obj", 'rb')
 data = pickle.load(f)
 print(data)
 f.close()
 
 
-# os : 환경 변수, 디렉토리(파일) 처리 관련, 운영체제 작업 관련
-# mkdir, rmdir(비어있으면 삭제), rename
+# os : environmental variables, directory(file) process, os task
+# mkdir, rmdir(remove if empty), rename
 import os
 
-# 예제6
+# 6
 print(os.environ)
 print(os.environ['USERNAME'])
 
-# 예제7(현재 경로)
+# 7 (current location)
 print(os.getcwd())
 
 
-# time : 시간 관련 처리
+# time : process time
 import time
 
-# 예제8
+# 8
 print(time.time())
 
-# 예제9(형태 변환)
+# 9 - casting
 print(time.localtime(time.time()))
 
-# 예제10(간단 표현)
+# 10 - simple expression
 print(time.ctime())
 
-# 예제11(형식 표현)
+# 11 - formatting expression
 print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))
 
-# 예제12(시간 간격 발생)
+# 12 - time interval execution
 for i in range(5):
 	print(i)
 	time.sleep(1)
 
 
-# random : 난수 리턴
+# random : return random number
 import random
 
-# 예제13
+# 13
 print(random.random())
 
-# 예제14
+# 14
 print(random.randint(1, 45))
 
-# 예제15(섞기)
+# 15 - mix
 d = [1, 2, 3, 4, 5]
 random.shuffle(d)
 print(d)
 
-# 예제16(무작위 선택)
+# 16 - random
 c = random.choice(d)
 print(c)
 
 
 # webbrowser : 본인 OS 의 웹 브라우저 실행
+import webbrowser
 
 # 예제17
 webbrowser.open("http://google.com")
