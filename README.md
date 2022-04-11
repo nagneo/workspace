@@ -1,2 +1,5 @@
 # Workspace
-workspace for small project
+workspace for study
+
+java / algorithm 
+python / introduction 
