@@ -2,36 +2,34 @@
 # Hangman(행맨) 미니게임 제작(1)
 # 기본 프로그램 제작 및 테스트
 
-# 시간 처리
+# process time
 import time
 
-#처음 인사
+# Hello
 name = input("What is your name? ")
-
 print("Hi!, " + name, "Time to play hangman game!")
-
 print()
 
-#1초 대기
+#1 sec sleep
 time.sleep(1)
 
 print("Start loading...")
 print()
 time.sleep(0.5)
 
-#정답 단어
+# answer
 word = "secret"
 
-#추측 단어
+# guess
 guesses = ''
 
-#기회
+# chance count
 turns = 10
 
-# 핵심 While Loop
-# 찬스 카운트가 남아 있을 경우
+# key : While Loop
+# if chance count has remained
 while turns > 0:
-    # 실패 횟수
+    # fail count
     failed = 0
 
     # 정답 단어 반복

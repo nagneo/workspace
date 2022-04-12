@@ -1,46 +1,51 @@
 # Chapter09-2
-# CSV 파일 읽기 및 쓰기
+# CSV file read and write
 
 # CSV : MIME - text/csv
 
 import csv
+import os
 
-# 예제1
-with open('./resource/test1.csv', 'r') as f:
+# 1
+scriptPath = os.path.dirname(__file__)
+filePath = os.path.join(scriptPath, './resource/test1.csv')
+with open(filePath, 'r') as f:
     reader = csv.reader(f)
     # next(reader) Header Skip
-    # 객체 확인
+    # check object
     print(reader)
-    # 타입 확인
+    # check type
     print(type(reader))
-    # 속성 확인
+    # check property
     print(dir(reader))  # __iter__
     print()
 
     for c in reader:
         # print(c)
-        # 타입 확인
-        print(type(c))
+        # check type
+        print(type(c), end=' ')
         # list to str
         print(''.join(c))
 
-# 예제2
-with open('./resource/test2.csv', 'r') as f:
-    reader = csv.reader(f, delimiter='|')  # 구분자 선택
-    # next(reader) Header 스킵
-    # 확인
+# 2
+filePath = os.path.join(scriptPath, './resource/test2.csv')
+with open(filePath, 'r') as f:
+    reader = csv.reader(f, delimiter='|')  # choose seperator
+    # next(reader) Header skip
+    # check
 
     for c in reader:
         # print(c)
         print(''.join(c))
 
-# # 예제3 (Dict 변환)
-with open('./resource/test1.csv', 'r') as f:
+# # 3 (Dict Conversion)
+filePath = os.path.join(scriptPath, './resource/test1.csv')
+with open(filePath, 'r') as f:
     reader = csv.DictReader(f)
-    # 확인
+    #check
     print(reader)
     print(type(reader))
-    print(dir(reader))  # __iter__ 확인
+    print(dir(reader))  # __iter__ check
     print()
 
     for c in reader:
@@ -48,24 +53,25 @@ with open('./resource/test1.csv', 'r') as f:
             print(k, v)
         print('-----')
 
-# 예제4
+# 4
 w = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15], [16, 17, 18], [19, 20, 21]]
-
-with open('./resource/write1.csv', 'w', encoding='utf-8') as f:
+writePath = os.path.join(scriptPath, './resource/write1.csv')
+with open(writePath, 'w', encoding='utf-8') as f:
     print(dir(csv))
     wt = csv.writer(f)
-    # dir 확인
+    # dir check
     print(dir(wt))
-    # 타입 확인
+    # type check
     print(type(wt))
     for v in w:
         wt.writerow(v)
 
-# 예제5
-with open('./resource/write2.csv', 'w', newline='') as f:
-    # 필드명
+# 5
+writePath = os.path.join(scriptPath, './resource/write2.csv')
+with open(writePath, 'w', newline='') as f:
+    # field name
     fields = ['one', 'two', 'three']
-    # Dict Writer 선언
+    # Dict Writer declaration
     wt = csv.DictWriter(f, fieldnames=fields)
     # Herder Write
     wt.writeheader()
