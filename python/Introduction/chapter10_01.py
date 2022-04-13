@@ -32,45 +32,45 @@ while turns > 0:
     # fail count
     failed = 0
 
-    # 정답 단어 반복
+    # iterate answer
     for char in word:
-        # 정답 단어 내에 추측 단어가 포함되어 있는 경우
+        # If guesses contains answer,
         if char in guesses:
-            # 추측 단어 출력
+            # print guessed charector
             print (char, end=' ')
         else:
-            # 틀린 경우 대시로 처리
+            # print dash(_)
             print ("_", end=' ')
-            # 실패 횟수 증가
+            # fail count up
             failed += 1
 
-    # 단어 추측이 성공한 경우
+    # if succeed to guess word
     if failed == 0:
         print()
         print()
         print("Congratulations! The Guesses is correct.")
-        # while 구문 중단
+        # stop while statement
         break
 
     print()
 
-    # 추측 단어 글자 단위 입력
+    # input guessed word
     print()
     guess = input("guess a character:")
 
-    # 단어 더하기
+    # add word
     guesses += guess
 
-    # 정답 단어에 추측한 문자가 포함되어 있지 않으면
+    # If guessed word is not contained in answer word
     if guess not in word:
-        # 기회 횟수 감소
+        # chance count down
         turns -= 1
-        # 오류 메시지
+        # print wrong message
         print("Oops! Wrong")
-        # 남은 기회 출력
+        # print remained change count
         print("You have", + turns, 'more guesses!')
 
-        # 기회를 모두 사용하면
+        # if fail
         if turns == 0:
-            # 실패 메시지
+            # fail message
             print("You hangman game failed. Bye!")
